@@ -1,4 +1,4 @@
-##Hello Gilded Rose team 
+##Hello Gilded Rose team :)
 
 First of all, thank you for the heads up regarding the golbin sitting at the corner. I know you mentioned that none of his code should not be changed but none the less I felt there was room for improvement.
 Upon feeling so, I decided to try and have conversation with him. I took your warnings very seriously, so I contacted local wizard who is an old acquaintance of mine. He let me borrow his cloak of charisma +3 and also get me 2 spell scrolls. One was a Charm person and the second a Charm monster as I believe in some places it is still debatable whether a goblin is considered a person or a monster :)

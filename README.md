@@ -18,3 +18,5 @@ I thought of splitting parts of the application to a web client and web service 
 For any questions you might have please feel free to contact me.
 
 Thank you for your time! It was quite interesting to see how it would work out with mr. goblin :)
+
+PS: Please remember to set the "GildedRose.Console" as teh startup project!

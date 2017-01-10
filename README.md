@@ -1,68 +1,20 @@
-##Gilded Rose Refactoring Kata
+##Hello Gilded Rose team 
 
-Hi and welcome to team Gilded Rose. As you know, we are a small inn with a 
-prime location in a prominent city ran by a friendly innkeeper named 
-Allison. We also buy and sell only the finest goods. Unfortunately, our 
-goods are constantly degrading in quality as they approach their sell by 
-date. We have a system in place that updates our inventory for us. It was 
-developed by a no-nonsense type named Leeroy, who has moved on to new 
-adventures. Your task is to add the new feature to our system so that we 
-can begin selling a new category of items. First an introduction to our 
-system:
+First of all, thank you for the heads up regarding the golbin sitting at the corner. I know you mentioned that none of his code should not be changed but none the less I felt there was room for improvement.
+Upon feeling so, I decided to try and have conversation with him. I took your warnings very seriously, so I contacted local wizard who is an old acquaintance of mine. He let me borrow his cloak of charisma +3 and also get me 2 spell scrolls. One was a Charm person and the second a Charm monster as I believe in some places it is still debatable whether a goblin is considered a person or a monster :)
 
-- All items have a SellIn value which denotes the number of days we have 
-to sell the item
-- All items have a Quality value which denotes how valuable the item is
-- At the end of each day our system lowers both values for every item
+One evening then I decided to wear the magic cloak and cast both spells just in case. I approached the angry goblin decided to start the conversation. During this time, we had a talk about the certain parts of the code that belong to him and I came with a few arguments as to why it might be better if we changed it “a bit”.  These arguments included from simple things as for example that it is not the best practice to keep data hardcoded in the source code, or that have the data stored in the main project it could cause a circular dependency on some scenarios.
 
-Pretty simple, right? Well this is where it gets interesting:
+After seeing that the goblin was positive to listen to these, I also felt confident enough to point out that code sharing and being open to new ideas is not as bad as it seems. No one is perfect or all knowing, so being able to share and discuss changes our code will eventually lead us on the way of becoming better developers.
 
-- Once the sell by date has passed, Quality degrades twice as fast
-- The Quality of an item is never negative
-- "Aged Brie" actually increases in Quality the older it gets
-- The Quality of an item is never more than 50
-- "Sulfuras", being a legendary item, never has to be sold or decreases 
-in Quality
-- "Backstage passes", like aged brie, increases in Quality as it's SellIn 
-value approaches; Quality increases by 2 when there are 10 days or less 
-and by 3 when there are 5 days or less but Quality drops to 0 after the 
-concert
+The result was that we decided to create a small database for storing the data for the inn even though we would have to add an Id to the Item class. He was still not acceptant to the idea of adding for example an ItemType enumerator so we compromised in adding an extra table that would hold item attributes instead, thus affecting the Item object as little as possible.
+You can find the scripts for the tables in the InnAdministrator.Data project. You will just need to create a new SQL Server database named "InnAdministrator" in any of your systems, change the connection string in the Console project config file and run the scripts for the table and data on the database.
 
-We have recently signed a supplier of conjured items. This requires an 
-update to our system:
+I then changed the structure to work with a “bit” more SOLID principles in order to make the application more extensible, since I heard there is a great interest from other inns in the area and we might be able to license it to some of them as well. 
+I also added a small set of unit tests during the process. Please note that I have included some tests that run both as [Fact]s and as [Theory] just as an example, for Aged cheese and backstage passes.
 
-- "Conjured" items degrade in Quality twice as fast as normal items
+I thought of splitting parts of the application to a web client and web service but I decided to leave this until we had a chance to talk together.
 
-Feel free to make any changes to the UpdateQuality method and add any 
-new code as long as everything still works correctly. However, do not 
-alter the Item class or Items property as those belong to the goblin 
-in the corner who will insta-rage and one-shot you as he doesn't 
-believe in shared code ownership (you can make the UpdateQuality 
-method and Items property static if you like, we'll cover for you).
+For any questions you might have please feel free to contact me.
 
-Just for clarification, an item can never have its Quality increase 
-above 50, however "Sulfuras" is a legendary item and as such its 
-Quality is 80 and it never alters.
-
-##Getting Started
-
-Clone the repository. Run build.bat from Powershell. If you see 
-output similar to the following screenshot, you are ready to 
-start refactoring.
-
-![alt text](images/build_output.png "Good Build Output")
-
-##Who, What, Why?
-Who: [@TerryHughes](https://twitter.com/TerryHughes), [@NotMyself](https://twitter.com/NotMyself)
-
-What & Why: [Refactor This: The Gilded Rose Kata](http://iamnotmyself.com/2011/02/13/refactor-this-the-gilded-rose-kata/)
-
-## License
-
-MIT
-
-## Suggested attribution
-
-This work is by [@TerryHughes](https://twitter.com/TerryHughes), [@NotMyself](https://twitter.com/NotMyself)
-
-The repository can be found at [https://github.com/NotMyself/GildedRose](https://github.com/NotMyself/GildedRose)
+Thank you for your time! It was quite interesting to see how it would work out with mr. goblin :)
